@@ -47,7 +47,7 @@ jobs:
         - scripts/migrate-databases.sh pal-tracker .
       deploy:
         provider: script
-        befor_script:
+        before_script:
         - cf login -a $CF_API_URL -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s review
         script:
         - scripts/deploy-app.sh pal-tracker $CF_ROUTE_PREFIX
