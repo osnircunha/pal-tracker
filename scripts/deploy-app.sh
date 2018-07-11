@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-ROUTE_URL="$2.apps.pikes.pal.pivotal.io"
-echo "Deploying $1 with route $ROUTE_URL"
+ROUTE_URL="apps.pikes.pal.pivotal.io"
+echo "Deploying $1 to $ROUTE_URL with with route $2"
 
-cf push $1 --route-path $ROUTE_URL
+pwd
+
+ls -lt
+
+#cf push pal-tracker -n osnir-pal -d apps.pikes.pal.pivotal.io
+cf push $1 -n $2 -d $ROUTE_URL
